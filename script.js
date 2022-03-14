@@ -1,6 +1,13 @@
-console.log("hello");
+saveBtn = $(".save-btn");
 $(document).ready(function () {
   $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+
+  saveBtn.on("click", function (event) {
+    console.log(this.s);
+    userInput = $(this).siblings("input").val();
+    console.log(userInput);
+    event.preventDefault();
+  });
 });
 
 var currentTime = Number(moment().hours());
